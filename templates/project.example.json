@@ -1,0 +1,28 @@
+{
+  "name": "example-project",
+  "desk_pane": "desk",
+  "lead_pane": "lead",
+  "remote_director_pane": "director",
+  "wake_owner": "lead",
+  "answer_route": "file",
+  "answers_file": "C:/path/to/user-desk/answers.md",
+  "incidents_file": "C:/path/to/user-desk/idle-incidents.md",
+  "pane_ledger": "C:/path/to/orchestration/panes.json",
+  "idle_min": {"remote_worker": 2, "lead": 6, "default": 10},
+  "fail_cap": 3,
+  "lead_loop_min": 10,
+  "roles": {"lead": "high", "review": "high", "decision": "high", "analysis": "high",
+            "impl": "medium", "test": "medium", "docs": "medium", "desk": "medium"},
+  "approvals": {"auto": ["lane-merge", "push:release/*", "tag"],
+                "ask": ["merge:main", "live-replace", "site-install", "prod-write", "delete"]},
+  "build_slots": {"per_build_gb": 7, "start_free_gb": 10, "min_free_after_gb": 4, "handoff_wait_min": 20},
+  "app_process_like": "*MyApp*",
+  "login_marker": "Password",
+  "auth_wait_marker": "Cancel login",
+  "remotes": [
+    {"label": "Test A", "machine": "test-a", "worker": "test-a/worker", "watch": "test-a/watch", "uiux": "test-a/uiux",
+     "progress": "C:/work/results/progress.md", "board": "C:/work/results/scenario-board.md", "shots": "C:/work/desk-shots"},
+    {"label": "Test B", "machine": "test-b", "worker": "test-b/worker", "watch": "test-b/watch", "uiux": "test-b/uiux",
+     "progress": "E:/work/results/progress.md", "board": "E:/work/results/scenario-board.md", "shots": "E:/work/desk-shots"}
+  ]
+}
